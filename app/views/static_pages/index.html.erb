@@ -1,0 +1,13 @@
+<h1>Search in Flickr</h1>
+<%= form_with method: :get do |form| %>
+    <%= form.label :user_id, "Flickr User id" %>
+    <%= form.text_field :user_id, placeholder: "111111@N34" %>
+    <%= form.submit "Find Photos" %>
+<% end %>
+
+<% if @photos %>
+    <% @photos.each do |title, link| %>
+        <h3><%= title %></h3>
+        <%= image_tag link, alt: "user image" %>
+    <% end %>
+<% end %>
